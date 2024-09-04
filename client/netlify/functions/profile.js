@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const User = require("./models/User");
+const User = require("../../api/models/User");
 const secret = process.env.secretKEY;
 
 module.exports.handler = async (event, context) => {

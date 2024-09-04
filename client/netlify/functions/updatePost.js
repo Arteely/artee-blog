@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
-const Post = require("./models/Post");
+const Post = require("../../api/models/Post");
 const secret = process.env.secretKEY;
 
 module.exports.handler = async (event, context) => {

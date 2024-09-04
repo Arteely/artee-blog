@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Tag = require("./models/Tag");
+const Tag = require("../../api/models/Tag");
 
 module.exports.handler = async (event, context) => {
   const { tagName } = event.queryStringParameters;

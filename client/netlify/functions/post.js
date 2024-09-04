@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Post = require("./models/Post");
+const Post = require("../../api/models/Post");
 
 module.exports.handler = async (event, context) => {
   const { title, summary, content, cover, author } = JSON.parse(event.body);
