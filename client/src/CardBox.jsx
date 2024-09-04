@@ -13,7 +13,7 @@ export default function CardBox({
   return (
     <div className="cardbox">
       <Link to={`/post/${_id}`}>
-        <img src={"http://localhost:4000/" + cover} alt="" />
+        <img src={`/${cover}`} alt="Post Cover"></img>
       </Link>
       <Link to={`/tag/${tag}`}>
         <h6 className="chip-main">{tag}</h6>

@@ -1,3 +1,4 @@
+
 const express = require("express");
 const cors = require("cors");
 const { default: mongoose } = require("mongoose");
@@ -14,16 +15,19 @@ const fs = require("fs");
 const uploadMiddleware = multer({ dest: "uploads/" });
 
 const salt = bcrypt.genSaltSync(10);
-const secret = "jk3ASDb98xasgGSD84zx2c346jgfdkl";
+const secret = process.env.secretKEY;
+const mongoURI = process.env.MONGODB_URI;
 
 app.use(cors({ credentials: true, origin: "http://localhost:5173" }));
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
-mongoose.connect(
-  "mongodb+srv://artemyev:TAiuQuenZVbySdpu@cluster0.3vkdhdr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-);
+mongoose.connect(mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB connection error:', err));
 
 
 

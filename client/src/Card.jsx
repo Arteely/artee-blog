@@ -38,7 +38,7 @@ export default function Card({
         </div>
       </div>
       <Link to={`/post/${_id}`}>
-        <img src={"http://localhost:4000/" + cover}></img>
+        <img src={`/${cover}`} alt="Post Cover"></img>
       </Link>
     </div>
   );

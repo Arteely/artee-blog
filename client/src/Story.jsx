@@ -26,7 +26,7 @@ export default function Story({
   const convertTwittertoLink = (url) => {
     const tweetId = url.split("status/")[1];
     return tweetId;
-  }
+  };
 
   return (
     <Link className="story-container" to={`/story/${_id}`}>
@@ -52,16 +52,16 @@ export default function Story({
         </div>
         {cover && (
           <Link to={`/story/${_id}`}>
-            <img src={"http://localhost:4000/" + cover} alt="" />
+            <img src={`/${cover}`} alt="Post Cover"></img>
           </Link>
         )}
         {twitterEmbed && (
-            <TwitterTweetEmbed
-              tweetId={convertTwittertoLink(twitterEmbed)}
-              hide_media="false"
-              data-theme="dark"
-              align="center"
-            />
+          <TwitterTweetEmbed
+            tweetId={convertTwittertoLink(twitterEmbed)}
+            hide_media="false"
+            data-theme="dark"
+            align="center"
+          />
         )}
         {youtubeEmbed && (
           <div className="iframe-container">
